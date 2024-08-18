@@ -1,38 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
 .App {
-  text-align: center;
+  display: flex;
+  text-align: left;
+  height: 100vh;
+  background-image: url("./assets/fondo.pres.png");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  padding-left: 60px;
+  justify-content: space-between;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  position: relative;
+  z-index: 2;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: calc(5px + 2vmin);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: flex-start;
+  padding-top: 20px;
+  padding-right: 200px;
+}
+
+.App-logo {
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  height: 80px;
+}
+
+.Content {
+  display: flex;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.Client-section {
+  flex: 1;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.Dashboard-section {
+  flex: 2;
+  padding-left: 20px;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.Client-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 20px;
+  border: none;
+  background-color: #007bff;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.Client-list,
+.Ubicaciones-list {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Client-list li,
+.Ubicaciones-list li {
+  padding: 10px;
+  color: white;
+  border-bottom: 1px solid #444;
+  cursor: pointer;
+}
+
+.Client-list li:last-child,
+.Ubicaciones-list li:last-child {
+  border-bottom: none;
+}
+
+.Client-list li:hover,
+.Ubicaciones-list li:hover {
+  background-color: #555;
+}
+
+.Client-list li.selected,
+.Ubicaciones-list li.selected {
+  background-color: #444;
+}
+
+.Pagination {
+  display: flex;
+  margin-top: 10px;
+}
+
+.Pagination-button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+}
+
+.Pagination-button.active {
+  background-color: #0056b3;
+}
+
+.Dashboard-title {
+  font-size: 24px;
+  color: white;
+}
+
+.Dashboard-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.Dashboard {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.Estado-bar {
+  height: 20px;
+  border-radius: 10px;
+  margin: 5px 0;
+}
+
+.Estado-bar.implementado {
+  background-color: green;
+}
+
+.Estado-bar.Sin_implementación {
+  background-color: red;
+}
+
+.Estado-bar.En_implementación {
+  background-color: blue;
+}
+
+.Estado-label {
+  font-size: 16px;
+  color: white;
+}
+.Count-section {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
+  color: white;
+}
+
+.Search-input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  font-size: 16px;
 }
